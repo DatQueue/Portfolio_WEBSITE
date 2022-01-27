@@ -44,6 +44,7 @@ body {
   margin : 0;
   font-family: 'Open Sans', sans-serif;
   cursor :default;
+  font-weight: var(--weight-bold);
 }
 
 a {
@@ -161,6 +162,10 @@ h3{
 .section {
   padding : 50px;
   text-align: center;
+  margin : auto;
+}
+
+.section__container {
   max-width: 1200px;
   margin : auto;
 }
@@ -231,3 +236,142 @@ h3{
 .job__period {
   font-size: var(--font-micro);
 }
+
+/* Skill */
+#skills {
+  background-color: var(--color-yellow);
+}
+
+.skillset {
+  display: flex;
+  background-color: var(--color-light-grey);
+  color :var(--color-light-white);
+  margin : 20px 0; 
+}
+
+.skillset__left{
+  flex-basis: 60%;
+  background-color: var(--color-dark-grey);
+  padding : 20px 40px;
+}
+
+.skill {
+  margin-bottom: 32px;
+}
+
+.skill__description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skill__bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-grey);
+  border-radius: 4px;
+}
+
+.skill__bar .skill__value {
+  height: 3px;
+  background-color: var(--color-orange);
+  border-radius: 4px;
+}
+
+.bar1 > .skill__value {
+  animation : stack1 2s 1;
+}
+.bar2 > .skill__value {
+  animation : stack2 2s 1;
+}
+.bar3 > .skill__value {
+  animation : stack3 2s 1;
+}
+.bar4 > .skill__value {
+  animation : stack4 2s 1;
+}
+.bar5 > .skill__value {
+  animation : stack5 2s 1;
+}
+.bar6 > .skill__value {
+  animation : stack6 2s 1;
+}
+
+@keyframes stack1 {
+  0%{
+    width : 0;
+  }100%{
+    width : 99%;
+  }
+}
+@keyframes stack2 {
+  0%{
+    width : 0;
+  }100%{
+    width : 90%;
+  }
+}
+@keyframes stack3 {
+  0%{
+    width : 0;
+  }100%{
+    width : 99%;
+  }
+}
+@keyframes stack4 {
+  0%{
+    width : 0;
+  }100%{
+    width : 80%;
+  }
+}
+@keyframes stack5 {
+  0%{
+    width : 0;
+  }100%{
+    width : 88%;
+  }
+}
+@keyframes stack6 {
+  0%{
+    width : 0;
+  }100%{
+    width : 77%;
+  }
+}
+
+
+.skillset__right{
+  flex-basis: 40%;
+}
+
+.skillset__right .tools {
+  background-color: var(--color-grey);
+}
+
+.skillset__title {
+  color: var(--color-white);
+}
+
+.tools, .etc {
+  padding : 20px;
+}
+
+.tools__list , .etc__list {
+  font-size: var(--font-small);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
