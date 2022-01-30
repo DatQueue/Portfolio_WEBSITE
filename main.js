@@ -13,7 +13,9 @@ window.addEventListener("scroll", () => {
   }
 });
 
-//Handle scrolling when tapping on the navbar menu
+// Handle scrolling when tapping on the navbar menu
+
+// Ellie's solve (simple)
 const navbarMenu = document.querySelector(".navbar__menu");
 navbarMenu.addEventListener("click", (event) => {
   const target = event.target;
@@ -21,7 +23,39 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
-  console.log(event.target.dataset.link);
+  console.log(target.dataset.link);
   const scrollTo = document.querySelector(link);
   scrollTo.scrollIntoView({ behavior: "smooth" });
 });
+
+// Another solve (hard)
+// const menuBtns = document.querySelectorAll(".navbar__menu__item");
+// menuBtns.forEach((item, index) => {
+//   item.addEventListener("click", (e) => {
+//     const target = e.target;
+//     console.log(target);
+//     const link = target.dataset.link;
+//     console.log(link);
+//     const scrollTo = document.querySelector(link);
+//     switch (index) {
+//       case 0:
+//         scrollTo.scrollIntoView({ behavior: "smooth" });
+//         break;
+//       case 1:
+//         scrollTo.scrollIntoView({ behavior: "smooth" });
+//         break;
+//       case 2:
+//         scrollTo.scrollIntoView({ behavior: "smooth" });
+//         break;
+//       case 3:
+//         scrollTo.scrollIntoView({ behavior: "smooth" });
+//         break;
+//       case 4:
+//         scrollTo.scrollIntoView({ behavior: "smooth" });
+//         break;
+//       case 5:
+//         scrollTo.scrollIntoView({ behavior: "smooth" });
+//         break;
+//     }
+//   });
+// });
