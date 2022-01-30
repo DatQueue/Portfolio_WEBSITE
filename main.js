@@ -28,7 +28,20 @@ navbarMenu.addEventListener("click", (event) => {
   scrollTo.scrollIntoView({ behavior: "smooth" });
 });
 
-// Another solve (hard)
+// //Another solve (sol.1)
+// const navbarMenu = document.querySelectorAll(".navbar__menu__item");
+// navbarMenu.forEach((item, index) => {
+//   console.log(item);
+//   item.addEventListener("click", (e) => {
+//     const target = e.target;
+//     const link = target.dataset.link;
+//     console.log(target.dataset.link);
+//     const scrollTo = document.querySelector(link);
+//     scrollTo.scrollIntoView({ behavior: "smooth" });
+//   });
+// });
+
+// // Another solve (sol.2 -- switch)
 // const menuBtns = document.querySelectorAll(".navbar__menu__item");
 // menuBtns.forEach((item, index) => {
 //   item.addEventListener("click", (e) => {
