@@ -88,7 +88,7 @@ const home = document.querySelector(".home__contents");
 const homeHeight = homeWhole.getBoundingClientRect().height;
 
 window.addEventListener("scroll", () => {
-  console.log(1 - window.scrollY / homeHeight);
+  // console.log(1 - window.scrollY / homeHeight);
   home.style.opacity = 1 - window.scrollY / homeHeight;
   homeContactBtn.style.opacity = 1 - window.scrollY / homeHeight;
 });
@@ -99,6 +99,25 @@ homeContactBtn.addEventListener("mouseenter", () => {
 
 homeContactBtn.addEventListener("mouseleave", () => {
   homeContactBtn.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+//Show "arrow up" button when scrolling down & Change btn color when btn is placed on the contact
+const arrowUp = document.querySelector(".arrow-up");
+const body = document.querySelector("body");
+const bodyHeight = body.getBoundingClientRect().height;
+const contact = document.querySelector("#contact");
+const contactHeight = contact.getBoundingClientRect().height;
+window.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+console.log(bodyHeight - contactHeight);
+// Handle click on the "arrow up" button click
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
 });
 
 let scrollIntoView = (selector) => {
