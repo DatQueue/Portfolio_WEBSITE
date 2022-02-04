@@ -101,7 +101,7 @@ homeContactBtn.addEventListener("mouseleave", () => {
   homeContactBtn.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
-//Show "arrow up" button when scrolling down & Change btn color when btn is placed on the contact
+//Show "arrow up" button when scrolling down
 const arrowUp = document.querySelector(".arrow-up");
 const body = document.querySelector("body");
 const bodyHeight = body.getBoundingClientRect().height;
@@ -114,10 +114,32 @@ window.addEventListener("scroll", () => {
     arrowUp.classList.remove("visible");
   }
 });
-console.log(bodyHeight - contactHeight);
+
 // Handle click on the "arrow up" button click
 arrowUp.addEventListener("click", () => {
   scrollIntoView("#home");
+});
+
+//Projects
+const workBtnContainer = document.querySelector(".work__categories");
+const projectContainer = document.querySelector(".work__projects");
+const projects = document.querySelectorAll(".project");
+workBtnContainer.addEventListener("click", (e) => {
+  const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+  if (filter == null) {
+    return;
+  }
+  projectContainer.classList.add("anim-out");
+  setTimeout(() => {
+    projectContainer.classList.remove("anim-out");
+    projects.forEach((project) => {
+      if (filter === "*" || filter === project.dataset.type) {
+        project.classList.remove("invisible");
+      } else {
+        project.classList.add("invisible");
+      }
+    });
+  }, 300);
 });
 
 let scrollIntoView = (selector) => {
