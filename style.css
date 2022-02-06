@@ -99,7 +99,7 @@ h3{
   background-color: transparent;
   align-items: center;
   padding : 16px;
-  transition: all var(--animation-duration) ease-in-out;
+  transition: all var(--animation-duration) ease-in;
   z-index:9999;
 }
 
@@ -135,8 +135,8 @@ h3{
 
 .navbar__toggleBtn {
   position : absolute;
-  right: 32px;
-  top :22px;
+  right: 26px;
+  top :20px;
   font-size: 24px;
   color : var(--color-white);
   display: none;
@@ -477,19 +477,19 @@ h3{
 }
 
 .project__description >h3 {
-  color : var(--color-white);
+  color : var(--color-orange);
   margin-bottom: 8px;
 }
 
 .project__description >h3:after {
   content: '';
-  width: 25px;
+  width: 50px;
   height : 2px;
   background-color: var(--color-dark-white);
   display: block;
   position :relative;
   left : 50%;
-  margin-left: -12px;
+  transform : translateX(-50%);
   margin-top: 8px;
 }
 
@@ -601,15 +601,28 @@ h3{
 @media screen and (max-width : 768px) {
   .navbar__toggleBtn {
     display: block;
+    padding-left: 20px;
   }
   #navbar {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
+    background-color: var(--color-pink);
+  }
+  .fixed-nav #navbar {
+    padding: 18px;
   }
   .navbar__menu {
+    display: none;
     flex-direction: column;
     width: 100%;
     text-align: center;
+  }
+  .navbar__menu.show{
+    display: block;
+  }
+  .navbar__toggleBtn {
+    
   }
   .about__majors {
     flex-direction: column;

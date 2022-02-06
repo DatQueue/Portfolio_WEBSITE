@@ -23,7 +23,7 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   }
-  console.log(target.dataset.link);
+  navbarMenu.classList.remove("show");
   scrollIntoView(link);
 });
 
@@ -132,8 +132,8 @@ workBtnContainer.addEventListener("click", (e) => {
 
   //Remove selection from the previous item and select the new one
   const active = document.querySelector(".category__btn.selected");
-  console.log(active);
   active.classList.remove("selected");
+  console.log(active);
   const target =
     e.target.nodeName === "BUTTON" ? e.target : e.target.parentNode;
   target.classList.add("selected");
@@ -149,6 +149,13 @@ workBtnContainer.addEventListener("click", (e) => {
       }
     });
   }, 300);
+});
+
+//Create navbar toggleBTn for small screen
+const navbarToggleBTn = document.querySelector(".navbar__toggleBtn");
+
+navbarToggleBTn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("show");
 });
 
 let scrollIntoView = (selector) => {
